@@ -58,7 +58,6 @@ Item {
             var widint = client.windowId.toString();
             var wid16 = client.windowId.toString(16);
             shellWithReturn.run('echo '+widint+';xprop WM_HINTS -id 0x'+wid16);
-            console.log(client.width)
         }
     }
 
