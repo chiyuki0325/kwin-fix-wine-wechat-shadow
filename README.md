@@ -1,6 +1,10 @@
 # KWin 脚本: 修复 Wine 微信边缘阴影
 💬 通过检测窗口类名以屏蔽 Wine 微信的阴影窗体，也适用于其它程序。
 
+对 https://bugs.winehq.org/show_bug.cgi?id=34631 的一个可行的解决方案。
+
+<img src="image.png" style="zoom: 67%;" />
+
 ### 系统需求
 
 - KWin >= 5.14
