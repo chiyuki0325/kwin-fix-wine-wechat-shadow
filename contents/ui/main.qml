@@ -53,11 +53,12 @@ Item {
         var wm_name = client.caption.toString();
         var clsMatches = root.classmatch.indexOf(resource_class) >= 0 || root.classmatch.indexOf(resource_name) >= 0 ;
 
-        if (clsMatches && (wm_name == "") && (client.height > 180)) {
-            // 高度大于 180 确保不会误伤菜单
+        if (clsMatches && (wm_name == "") && (client.height > 180) && (client.width > 500)) {
+            // 确保不会误伤菜单
             var widint = client.windowId.toString();
             var wid16 = client.windowId.toString(16);
             shellWithReturn.run('echo '+widint+';xprop WM_HINTS -id 0x'+wid16);
+            console.log(client.width)
         }
     }
 
