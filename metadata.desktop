@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Fix Wine WeChat shadow
+Name[zh_CN]=修复 Wine 微信边缘阴影
+Comment=By detecting the window class name to block the shadow window of Wine WeChat
+Comment[zh_CN]=通过检测窗口类名以屏蔽 Wine 微信的阴影窗体
+Icon=preferences-system-windows-script-test
+
+X-Plasma-API=declarativescript
+X-Plasma-MainScript=ui/main.qml
+
+X-KDE-PluginInfo-Author=Yidaozhan Ya
+X-KDE-PluginInfo-Email=yidaozhan_ya@outlook.com
+X-KDE-PluginInfo-Name=fix-wine-wechat-shadow
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-License=MIT
+
+Type=Service
+X-KDE-ServiceTypes=KWin/Script
+
+X-KDE-ConfigModule=kwin/effects/configs/kcm_kwin4_genericscripted
