@@ -11,7 +11,7 @@ X-Plasma-MainScript=ui/main.qml
 X-KDE-PluginInfo-Author=Yidaozhan Ya
 X-KDE-PluginInfo-Email=yidaozhan_ya@outlook.com
 X-KDE-PluginInfo-Name=fix-wine-wechat-shadow
-X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Version=0.2
 X-KDE-PluginInfo-License=MIT
 
 Type=Service
