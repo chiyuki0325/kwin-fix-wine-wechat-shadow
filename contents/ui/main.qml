@@ -14,6 +14,10 @@ Item {
             })
     )
 
+    readonly property var matchHint: (
+        KWin.readConfig("matchHint", true)
+    )
+
     PlasmaCore.DataSource {
         id: shell
         engine: 'executable'
@@ -52,12 +56,18 @@ Item {
         var resource_name = client.resourceName.toString().toLowerCase();
         var wm_name = client.caption.toString();
         var clsMatches = root.classmatch.indexOf(resource_class) >= 0 || root.classmatch.indexOf(resource_name) >= 0 ;
-
-        if (clsMatches && (wm_name == "") && (client.height > 180) && (client.width > 500)) {
-            // 确保不会误伤菜单
-            var widint = client.windowId.toString();
-            var wid16 = client.windowId.toString(16);
-            shellWithReturn.run('echo '+widint+';xprop WM_HINTS -id 0x'+wid16);
+        if (clsMatches && (wm_name = "")) {
+            if ((client.height > 180) && (client.width > 500)) {
+                // 确保不会误伤菜单
+                var widint = client.windowId.toString();
+                if (root.matchHint) {
+                    var wid16 = client.windowId.toString(16);
+                    shellWithReturn.run('echo '+widint+';xprop WM_HINTS -id 0x'+wid16);
+                } else {
+                    shell.run('xdotool windowunmap '+widint);
+                    console.log('fix-wine-wechat-shadow: matched window '+widint);
+                }
+            }
         }
     }
 

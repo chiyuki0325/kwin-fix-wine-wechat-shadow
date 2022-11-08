@@ -9,5 +9,8 @@
       <label>需要匹配的窗口类名，使用换行分隔</label>
         <default>wechat.exe</default>
     </entry>
+    <entry name="matchHint" type="Bool">
+      <default>true</default>
+    </entry>
   </group>
 </kcfg>
